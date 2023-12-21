@@ -2,89 +2,123 @@
   margin: 0px;
   padding: 0px;
 }
+body{
+  background-color: black;
+}
 header {
   width: 100%;
   height: 9dvh;
-  box-shadow: 0px 2px 1px 2px rgb(54, 54, 54);
+  padding: 0px 40px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  background-color: black;
+  border: 0px solid white;
 }
 header h1 {
-  /* border: 2px solid red; */
   color: blueviolet;
   font-size: 34px;
   font-weight: 800;
 }
-main {
-  width: 100%;
-  height: 91dvh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-}
-main .game {
-  width: 70%;
-  padding: 20px 20px 20px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  box-sizing: border-box;
-  box-shadow: 0px 0px 5px 0px rgb(90, 90, 90);
-  /* border: 2px solid rgb(41, 41, 41); */
-}
-#gameUI {
-  border: none;
-  border-collapse: collapse;
-  border: 0px solid blue;
-}
-#gameUI td {
-  padding: 0px;
+header p{
+  color: aqua;
+  font-size: 28px;
+  margin-top: 2%;
   text-align: center;
-  font-size: 44px;
-  font-family: Arial, Helvetica, sans-serif;
-  color: rgba(255, 255, 255, 0);
 }
-#gameUI #cell1,
-#cell2,
-#cell4,
-#cell5,
-#cell7,
-#cell8 {
-  width: 120px;
-  height: 120px;
-  border-right: 5px solid rgb(13, 255, 0);
-}
-#gameUI #cell1,
-#cell2,
-#cell3,
-#cell4,
-#cell5,
-#cell6 {
-  width: 120px;
-  height: 120px;
-  border-bottom: 5px solid rgb(13, 255, 0);
-}
-main .gameControls {
-  width:40%;
+header .gameControls {
   height: 100%;
-  margin: 0px 0px 0px 0%;
+  margin: 0px 0px 0px 0px;
   display: flex;
   flex-wrap: wrap;
   box-sizing: border-box;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-left: 0px solid rgb(41, 41, 41);
+  border-left: 0px solid rgb(110, 110, 110);
 }
-main .gameControls button {
+header .gameControls h2{
+  color: aqua;
+}
+header .gameControls button {
   font-size: 20px;
   font-weight: bold;
 }
-main .gameControls img {
-  width: 30%;
-  height: 30%;
+header .gameControls img{
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  width: 100%;
+  height: 91dvh;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+main img {
+  width: 10%;
+  height: 25%;
+  margin-left: -11%;
+  margin-top: 23%;
   border: 0px solid red;
 }
+main .game {
+  width: 60%;
+  height: 80%;
+  padding: 20px;
+  color: blueviolet;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 5px 0px rgb(90, 90, 90);
+  /* border: 2px solid rgb(41, 41, 41); */
+}
+
+
+.game table {
+  border: none;
+  border-collapse: collapse;
+  border: 0px solid blue;
+}
+.game table td {
+  padding: 0px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 84px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgba(0, 0, 0, 0);
+}
+.game table td:hover{
+  background-color: rgb(61, 61, 61);
+}
+
+.game table #cell1,
+#cell2,
+#cell4,
+#cell5,
+#cell7,
+#cell8 {
+  width: 140px;
+  height: 140px;
+  border-right: 5px solid rgb(255, 255, 255);
+}
+.game table #cell1,
+#cell2,
+#cell3,
+#cell4,
+#cell5,
+#cell6 {
+  width: 140px;
+  height: 140px;
+  border-bottom: 5px solid rgb(255, 0, 0);
+}
+
