@@ -22,32 +22,33 @@ let checkDrawRow2 = '';
 let checkDrawRow3 = '';
 gameUI.disabled = true;
 
-document.getElementById('audioPlayPause').addEventListener('click', () => {
+const audioPlayPause=()=>{
     if (audioPlayPauseSrcValue == 'audio') {
-        audioPlayPause.src = 'Noaudio-50.png';
+        document.getElementById('audioPlayPause').src = 'Noaudio-50.png';
         backgroundSound.pause();
         audioPlayPauseSrcValue = 'noAudio'
     }
     else {
-        audioPlayPause.src = 'audio-50.png';
+        document.getElementById('audioPlayPause').src = 'audio-50.png';
         backgroundSound.play();
         audioPlayPauseSrcValue = 'audio';
     }
-})
+}
 
 startGameBtn.addEventListener('click', () => {
     Array.from(document.querySelectorAll('#row1 td')).forEach((element) => {
         element.setAttribute('onclick', 'printXorO(this)');
-        console.log(element);
+        // console.log(element);
     });
     Array.from(document.querySelectorAll('#row2 td')).forEach((element) => {
         element.setAttribute('onclick', 'printXorO(this)');
-        console.log(element);
+        // console.log(element);
     })
     Array.from(document.querySelectorAll('#row3 td')).forEach((element) => {
         element.setAttribute('onclick', 'printXorO(this)');
-        console.log(element);
+        // console.log(element);
     })
+    document.getElementById('audioPlayPause').setAttribute('onclick','audioPlayPause()');
     backgroundSound.play();
     turn();
 })
