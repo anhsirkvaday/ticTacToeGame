@@ -17,10 +17,7 @@ let startGameBtn = document.getElementById('start');
 let turnHeading = document.createElement('h2');
 let audioPlayPauseSrcValue = 'audio';
 
-let checkDrawRow1 = '';
-let checkDrawRow2 = '';
-let checkDrawRow3 = '';
-gameUI.disabled = true;
+let allCellFilled = '';
 
 const audioPlayPause=()=>{
     if (audioPlayPauseSrcValue == 'audio') {
@@ -71,8 +68,8 @@ const printXorO = (element) => {
     tingSound.play();
     turn();
     checkCellValue();
-    checkWinning();
     checkDrawMatch();
+    checkWinning();
 }
 
 const turn = () => {
@@ -174,33 +171,24 @@ const winContent = (winner) => {
 }
 
 const checkCellValue = () => {
-    Array.from(document.querySelectorAll('#row1 td')).forEach((element) => {
-        if (element.innerText == 'X' || element.innerText == 'O') {
-            checkDrawRow1 = 'filled';
+        if ((cell1.innerText == 'X' || cell1.innerText == 'O') 
+        && (cell2.innerText == 'X' || cell2.innerText == 'O') 
+        && (cell3.innerText == 'X' || cell3.innerText == 'O')
+        && (cell4.innerText == 'X' || cell4.innerText == 'O')
+        && (cell5.innerText == 'X' || cell5.innerText == 'O')
+        && (cell6.innerText == 'X' || cell6.innerText == 'O')
+        && (cell7.innerText == 'X' || cell7.innerText == 'O')
+        && (cell8.innerText == 'X' || cell8.innerText == 'O')
+        && (cell9.innerText == 'X' || cell9.innerText == 'O')) {
+            allCellFilled='filled';
         }
-        else {
-            checkDrawRow1 = '';
+        else{
+            allCellFilled='';
         }
-    });
-    Array.from(document.querySelectorAll('#row2 td')).forEach((element) => {
-        if (element.innerText == 'X' || element.innerText == 'O') {
-            checkDrawRow2 = 'filled';
-        }
-        else {
-            checkDrawRow2 = '';
-        }
-    })
-    Array.from(document.querySelectorAll('#row3 td')).forEach((element) => {
-        if (element.innerText == 'X' || element.innerText == 'O') {
-            checkDrawRow3 = 'filled';
-        }
-        else {
-            checkDrawRow3 = '';
-        }
-    })
 }
+
 const checkDrawMatch = () => {
-    if (checkDrawRow1 == 'filled' && checkDrawRow2 == 'filled' && checkDrawRow3 == 'filled') {
+    if (allCellFilled == 'filled') {
         document.getElementById('result').innerText = 'The match ended in a draw!';
         backgroundSound.pause();
         gameOverSound.play();
